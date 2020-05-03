@@ -1,0 +1,40 @@
+html { height: 100%; }
+
+#main {
+  min-height:100%;
+  position:relative;
+  padding-bottom: 70px;
+  padding: 20px;
+  border: 20px solid #fff;
+  background: #fff;
+  border-radius: 10px; 
+}
+
+#wrapper {
+	padding-top: 100px;
+	padding-right: 5%;
+	padding-left: 5%;
+	background: #eee;
+}
+
+.footer { 
+  position: absolute; 
+  left: 0;
+  right: 0;
+  bottom: 0; 
+}
+
+#nav {
+	position: fixed;
+	z-index: 1;
+	width: 100%;
+}
+
+.col-padding {
+	padding-bottom: 30px;
+}
+
+img {
+  max-height: 500px;
+  max-width: 500px;
+}

@@ -1,0 +1,32 @@
+{% extends 'mainapp/base.html' %}
+
+{% block content %}
+	
+	{% if chats %}
+
+		<h2>Категория: {{category}}</h2><br>
+
+		<table class="table table-bordered table-striped" style="margin-bottom: 50px;">
+		  <thead>
+		    <tr>
+		      <th>Называние чата</th>
+		      <th style="width: 200px;">Дата создания чата</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		  	{% for chat in chats %}
+			    <tr>
+			      <td><a href="{% url 'chat' chat.id %}">{{chat.name}}</a></td>
+			      <td>{{chat.date}}</td>
+			    </tr>
+		    {% endfor %}
+		  </tbody>
+		</table>
+
+	{% else %}
+
+		<h2>Чаты не найдены</h2>
+
+	{% endif %}
+
+{% endblock %}

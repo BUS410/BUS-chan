@@ -1,0 +1,7 @@
+{% extends 'mainapp/base.html' %}
+
+{% block content %}
+
+	<h4>Чат создан. Не потеряйте <a href="{% url 'chat' chat_id %}">ссылку</a>, id чата: {{chat_id}}.</h4>
+
+{% endblock %}
