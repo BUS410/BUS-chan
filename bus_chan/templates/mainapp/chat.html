@@ -21,8 +21,27 @@
 			      <td>{{m.author}}</td>
 			      <td>{{m.date}}</td>
 			      <td>
-			      	{% if m.image %}
-			      		<img src="{{m.image.url}}" style="max-width: 100%; max-height: 400px;"><br><br>
+			      	{% if m.file %}
+			      		{% if m.get_file_format == 'image' %}
+			      			<img src="{{m.file.url}}" style="max-width: 100%;">
+			      		{% elif m.get_file_format == 'audio' %}
+			      		  <audio controls style="width: 100%">
+						    <source src="{{m.file.url}}" type="audio/mpeg">
+						    Тег audio не поддерживается вашим браузером. 
+						    <a href="{{m.file.url}}">Скачайте музыку</a>.
+						  </audio>
+			      		{% elif m.get_file_format == 'video' %}
+			      		  <video style="max-width: 100%;" controls="controls">
+						    <source src="{{m.file.url}}" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+						    Тег video не поддерживается вашим браузером. 
+						    <a href="{{m.file.url}}">Скачайте видео</a>.
+						  </video>
+			      		{% else %}
+			      			<a href="{{m.file.url}}" download="">
+								<button class="btn btn-primary">Ссылка на скачивание файла</button>
+							</a>
+			      		{% endif %}
+			      		<br>
 			      	{% endif %}
 			      	{{m}}
 			      </td>
@@ -44,7 +63,7 @@
 	  </div>
 
 	  <button type="submit" class="btn btn-primary">Отправить</button><br><br>
-	  <label>Фото(необязательно):</label>  <input type="file" name="image">
+	  <label>Файл(необязательно):</label>  <input type="file" name="file">
 	</form>
 
 {% endblock %}

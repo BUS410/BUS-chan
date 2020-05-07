@@ -72,6 +72,8 @@ def chat(request, chat_id):
 	return render(request, 'mainapp/chat.html', {'chat': current_chat, 'messeges': messeges,
 													'category': cat})
 
+
+
 def send_messege(request, chat_id):
 
 	messege = Messege(chat = Chat.objects.get(id=chat_id),
@@ -79,9 +81,10 @@ def send_messege(request, chat_id):
 			author = request.POST['author'])
 
 	try:
-		messege.image = request.FILES['image']
-	except:
-		pass
+		messege.file = request.FILES['file']
+		messege.set_file_format()
+	except Exception as e:
+		print(e)
 
 
 	messege.save()
