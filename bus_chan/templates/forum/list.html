@@ -1,0 +1,38 @@
+{% extends "forum/wrapper.html" %}
+
+
+{% block title %}Форум - вопросы{% endblock %}
+
+{% block content %}
+
+	<h2 class="display-4">Вопросы</h2>
+    <hr>
+
+	{% if questions_list %}
+		
+		{% for q in questions_list %}
+
+			<div class="card box-shadow">
+			  <div class="card-header">
+			      <a href="{% url 'detail' q.id %}"><h4>{{q.body}}</h4></a>
+			  </div>
+			  <div class="card-body">
+			    <em>Дата публикации: {{q.date}}<br> Автор: {{q.author}}</em>
+			  </div>
+			</div>
+			<br>
+
+		{% endfor %}
+
+        <div style="text-align: center;">
+            {% for p in pages %}
+                <a href="{% url 'page' p %}">{{ p }}</a>
+            {% endfor %}
+            <br>
+        </div>
+
+	{% else %}
+		<h2 class="display-4">Вопросы не найдены :(</h2>
+	{% endif %}
+
+{% endblock %}

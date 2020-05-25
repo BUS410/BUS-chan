@@ -5,25 +5,6 @@ from django.db import models
 # Create your models here.
 
 class Chat(models.Model):
-    CATEGORIES = [
-        ('metal_and_rock', 'Металл и рок'),
-        ('rap_and_pop', 'Реп и поп'),
-        ('classic', 'Классика'),
-        ('nightcore', 'Nightcore'),
-        ('programming', 'Программирование'),
-        ('2d', '2D графика'),
-        ('3d', '3D графика'),
-        ('design', 'Дизайн'),
-        ('mmorpg', 'MMORPG'),
-        ('rpg', 'RPG'),
-        ('action', 'Экшон'),
-        ('visual_novel', 'Визуальные новеллы'),
-        ('anime', 'Аниме'),
-        ('jojo', 'Джоджо'),
-        ('manga', 'Манга'),
-        ('ranobe', 'Ранобэ'),
-        ('other', 'Другое'),
-    ]
     name = models.CharField('Имя чата', max_length=50)
     category = models.CharField('Категория чата', max_length=50)
     is_private = models.BooleanField('Приватный чат')

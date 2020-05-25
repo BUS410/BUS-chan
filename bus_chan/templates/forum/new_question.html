@@ -1,0 +1,21 @@
+{% extends 'forum/wrapper.html' %}
+
+{% block title %}Создание нового вопроса{% endblock %}
+
+{% block content %}
+<br>
+			
+<form action="{% url 'leave_question' %}" method="POST">
+  {% csrf_token %}
+  <div class="form-group">
+    <label>Введите ник с которого будет опубликован вопрос</label>
+    <input type="text" required="" name="author" class="form-control" placeholder="Ник">
+
+    <label>Введите ваш вопрос</label>
+    <textarea class="form-control" required="" name="text" rows="10"></textarea>
+    
+  </div>
+  <button type="submit" class="btn btn-primary">Опубликовать</button>
+</form>
+
+{% endblock %}

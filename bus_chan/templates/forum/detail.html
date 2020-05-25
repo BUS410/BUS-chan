@@ -1,0 +1,58 @@
+{% extends "forum/wrapper.html" %}
+
+
+{% block title %}Вопрос от {{question.author}}{% endblock %}
+
+
+{% block content %}
+<br>
+			
+<div class="card box-shadow">
+  <div class="card-header">
+      <h2>Автор: {{question.author}}</h2>
+	  <h6>Опубликовано {{question.date}}</h6>
+	  <br>
+	  <p style="font-size: 20px;">
+	  	{{question.body}}
+	  </p>
+  </div>
+  <div class="card-body">
+
+  	{% if answers %}
+  		
+  		{% for a in answers %}
+			<div class="card box-shadow">
+		      <div class="card-header">
+		          <h5>{{a.author}}<br>{{a.date}}</h5>
+		      </div>
+		      <div class="card-body">
+		        {{a.body}}
+		      </div>
+		    </div>
+		    <br>
+  		{% endfor%}
+
+  	{% else %}
+		<h4 class="display-4">Ответы не найдены, станьте первым!</h4>
+  	{% endif %}
+    
+  	
+
+  </div>
+</div>
+<hr>
+<div class="container">
+	<form action="{% url 'leave_answer' question.id %}" method="POST" style="padding-bottom: 30px;">
+	  {% csrf_token %}
+	  <div class="form-group">
+	    <label>Введите ник с которого будет опубликован ответ</label>
+	    <input type="text" required="" class="form-control" placeholder="Ник" name="author">
+
+	    <label>Введите ваш ответ</label>
+	    <textarea name="text" required="" class="form-control" rows="10"></textarea>
+	    
+	  </div>
+	  <button type="submit" class="btn btn-primary">Ответить</button>
+	</form>
+</div>
+{% endblock %}
