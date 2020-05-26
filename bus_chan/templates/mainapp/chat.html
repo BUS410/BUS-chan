@@ -5,7 +5,7 @@
 	<h3>Чат: {{chat}}<br>id: {{chat.id}}<br>Категория: <a href="{% url 'category' chat.category %}">{{category}}</a></h3>
 	<hr>
 
-	{% if messeges %}
+	{% if massages %}
 
 		<table class="table table-bordered table-striped" style="margin-bottom: 50px;">
 		  <thead>
@@ -16,7 +16,7 @@
 		    </tr>
 		  </thead>
 		  <tbody>
-		  	{% for m in messeges %}
+		  	{% for m in massages %}
 			    <tr>
 			      <td>{{m.author}}</td>
 			      <td>{{m.date}}</td>
@@ -54,7 +54,7 @@
 		<h3>Сообщения не найдены, станьте первым!</h3><br>
 	{% endif %}
 
-	<form action="{% url 'send_messege' chat.id %}" method="POST" enctype="multipart/form-data" style="padding-bottom: 50px;">
+	<form action="{% url 'send_message' chat.id %}" method="POST" enctype="multipart/form-data" style="padding-bottom: 50px;">
 	  {% csrf_token %}
 	  <div class="form-group">
 	    <input type="text" required="" class="form-control" placeholder="Ник" name="author">
@@ -63,7 +63,6 @@
 	  </div>
 
 	  <button type="submit" class="btn btn-primary">Отправить</button><br><br>
-	  <label>Файл(необязательно):</label>  <input type="file" name="file">
 	</form>
 
 {% endblock %}

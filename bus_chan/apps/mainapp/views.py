@@ -1,9 +1,8 @@
 from random import choice
 from django.shortcuts import render
 from django.urls import reverse
-from django.http import HttpResponse, Http404, HttpResponseRedirect
-from django.utils import timezone
-from .models import Chat, Messege
+from django.http import Http404, HttpResponseRedirect
+from .models import Chat, Message
 
 CATEGORIES = {
     'Металл и рок': 'metal_and_rock',
@@ -31,6 +30,7 @@ def index(request):
 
 
 def category(request, category_name):
+    chats_category = None
     chats = Chat.objects.all().filter(is_private=False, category=category_name)
     for key, val in CATEGORIES.items():
         if val == category_name:
@@ -61,10 +61,11 @@ def create_newchat(request):
 def chat(request, chat_id):
     try:
         current_chat = Chat.objects.get(id=chat_id)
-    except:
+    except Exception as e:
+        print(e)
         raise Http404("Чат не найден")
 
-    messeges = current_chat.messege_set.order_by('id')
+    massages = current_chat.message_set.order_by('id')
     cat = current_chat.category
     for key, val in CATEGORIES.items():
         if val == cat:
@@ -72,22 +73,14 @@ def chat(request, chat_id):
             break
 
     return render(request, 'mainapp/chat.html',
-                  {'chat': current_chat, 'messeges': messeges,
+                  {'chat': current_chat, 'massages': massages,
                    'category': cat})
 
 
-def send_messege(request, chat_id):
-    messege = Messege(chat=Chat.objects.get(id=chat_id),
-                      text=request.POST['text'],
-                      author=request.POST['author'])
-
-    try:
-        messege.file = request.FILES['file']
-        messege.set_file_format()
-    except Exception as e:
-        print(e)
-
-    messege.save()
+def send_message(request, chat_id):
+    Message(chat=Chat.objects.get(id=chat_id),
+            text=request.POST['text'],
+            author=request.POST['author']).save()
 
     return HttpResponseRedirect(reverse('chat', args=[chat_id]))
 
@@ -96,5 +89,6 @@ def random_chat(request):
     try:
         chats = Chat.objects.all().filter(is_private=False)
         return chat(request, choice(chats).id)
-    except:
+    except Exception as e:
+        print(e)
         raise Http404('Чаты не найдены')
