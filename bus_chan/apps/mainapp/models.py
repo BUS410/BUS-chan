@@ -9,6 +9,7 @@ class Chat(models.Model):
     category = models.CharField('Категория чата', max_length=50)
     is_private = models.BooleanField('Приватный чат')
     date = models.DateField('Дата создания чата', auto_now_add=True)
+    key = models.CharField('Приватный ключ', blank=True, max_length=80)
 
     def __str__(self):
         return self.name

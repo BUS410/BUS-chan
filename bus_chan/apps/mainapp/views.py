@@ -1,4 +1,6 @@
 from random import choice
+from string import ascii_letters, digits
+
 from django.shortcuts import render
 from django.urls import reverse
 from django.http import Http404, HttpResponseRedirect
@@ -53,14 +55,40 @@ def create_newchat(request):
     is_private = bool(request.POST.get('private', ''))
 
     new_chat = Chat(name=name, category=cat, is_private=is_private)
+    _dict = {'chat_id': new_chat.id, 'key': '', 'private': False}
+    if is_private:
+        new_chat.key = ''.join(choice(ascii_letters+digits) for _ in range(79))
+        _dict = {'key': new_chat.key, 'chat_id': new_chat.id, 'private': True}
     new_chat.save()
+    _dict['chat_id'] = new_chat.id
 
-    return render(request, 'mainapp/detail_chat.html', {'chat_id': new_chat.id})
+    return render(request, 'mainapp/detail_chat.html', _dict)
 
 
-def chat(request, chat_id):
+def chat(request, chat_id: int):
     try:
         current_chat = Chat.objects.get(id=chat_id)
+        if current_chat.is_private:
+            raise Exception('Chat is private.')
+    except Exception as e:
+        print(e)
+        raise Http404("Чат не найден")
+
+    massages = current_chat.message_set.order_by('id')
+    cat = current_chat.category
+    for key, val in CATEGORIES.items():
+        if val == cat:
+            cat = key
+            break
+
+    return render(request, 'mainapp/chat.html',
+                  {'chat': current_chat, 'massages': massages,
+                   'category': cat})
+
+
+def private_chat(request, key: str):
+    try:
+        current_chat = Chat.objects.get(key=key)
     except Exception as e:
         print(e)
         raise Http404("Чат не найден")

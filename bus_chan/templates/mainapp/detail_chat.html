@@ -2,6 +2,6 @@
 
 {% block content %}
 
-	<h4 style="padding-bottom: 50px;">Чат создан. Не потеряйте <a href="{% url 'chat' chat_id %}">ссылку</a>, id чата: {{chat_id}}.</h4>
+	<h4 style="padding-bottom: 50px;">Чат создан. Не потеряйте <a href="{% if not private %}{% url 'chat' chat_id %}{% else %}{% url 'private_chat' key %}{% endif %}">ссылку</a></h4>
 
 {% endblock %}
