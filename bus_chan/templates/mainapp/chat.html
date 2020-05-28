@@ -26,9 +26,9 @@
 	<form action="{% url 'send_message' chat.id %}" method="POST" enctype="multipart/form-data" style="padding-bottom: 50px;">
 	  {% csrf_token %}
 	  <div class="form-group">
-	    <input type="text" required="" class="form-control" placeholder="Ник" name="author">
+	    <input type="text" class="form-control" placeholder="Ник" name="author">
 
-	    <textarea name="text" required="" class="form-control" rows="2" placeholder="Введите ваше сообщение"></textarea>
+	    <textarea name="text" required="" class="form-control" rows="3" placeholder="Введите ваше сообщение"></textarea>
 	  </div>
 
 	  <button type="submit" class="btn btn-primary">Отправить</button><br><br>

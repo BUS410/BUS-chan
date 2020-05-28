@@ -50,7 +50,9 @@ def newchat(request):
 
 
 def create_newchat(request):
-    name = request.POST['name']
+    name = request.POST['name'].strip()
+    if not name:
+        name = 'BUS-chat'
     cat = CATEGORIES[request.POST['category']]
     is_private = bool(request.POST.get('private', ''))
 
@@ -106,9 +108,15 @@ def private_chat(request, key: str):
 
 
 def send_message(request, chat_id):
+    author = request.POST['author'].strip()
+    text = request.POST['text'].strip()
+    if not author:
+        author = 'BUS-User'
+    if not text:
+        text = 'Люблю автобусы)'
     Message(chat=Chat.objects.get(id=chat_id),
-            text=request.POST['text'],
-            author=request.POST['author']).save()
+            text=text,
+            author=author).save()
 
     return HttpResponseRedirect(reverse('chat', args=[chat_id]))
 
