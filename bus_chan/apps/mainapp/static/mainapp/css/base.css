@@ -38,3 +38,11 @@ img {
   max-height: 500px;
   max-width: 500px;
 }
+
+#avatar {
+    max-width: 64px;
+    overflow: auto;
+    float: left;
+    padding-right: 10px;
+    display: block;
+}
