@@ -22,6 +22,8 @@ def forum(request, page):
     pages = ceil(len(questions) / 20)
     questions = questions[(page - 1) * QUESTIONS_IN_ONE_PAGE:
                           page * QUESTIONS_IN_ONE_PAGE]
+    for q in questions:
+        q.body = q.body.split('\n\n')[0]
     return render(request, 'forum/list.html', {'questions_list': questions,
                                                'pages': range(1, pages + 1)})
 
