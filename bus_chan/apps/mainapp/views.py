@@ -76,7 +76,7 @@ def chat(request, chat_id: int):
         print(e)
         raise Http404("Чат не найден")
 
-    massages = current_chat.message_set.order_by('id')
+    massages = current_chat.message_set.order_by('-id')
     cat = current_chat.category
     for key, val in CATEGORIES.items():
         if val == cat:
@@ -114,17 +114,24 @@ def send_message(request, chat_id):
         author = 'BUS-User'
     if not text:
         text = 'Люблю автобусы)'
-    Message(chat=Chat.objects.get(id=chat_id),
+    chat = Chat.objects.get(id=chat_id)
+    Message(chat=chat,
             text=text,
             author=author).save()
 
+    if chat.is_private:
+        return HttpResponseRedirect(reverse('private_chat', args=[chat.key]))
     return HttpResponseRedirect(reverse('chat', args=[chat_id]))
 
 
 def random_chat(request):
     try:
         chats = Chat.objects.all().filter(is_private=False)
-        return chat(request, choice(chats).id)
+        return HttpResponseRedirect(reverse('chat', args=[choice(chats).id]))
     except Exception as e:
         print(e)
         raise Http404('Чаты не найдены')
+
+
+def get_ticket(request):
+    return render(request, 'mainapp/ticket.html')

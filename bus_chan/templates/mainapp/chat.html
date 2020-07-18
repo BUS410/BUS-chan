@@ -7,10 +7,21 @@
 
 	<h4>Чат: {{chat}}<br>id: {{chat.id}}<br>Категория: <a href="{% url 'category' chat.category %}">{{category}}</a></h4>
 	<hr>
+    <form action="{% url 'send_message' chat.id %}" method="POST" id="form" style="padding-bottom: 50px;">
+	  {% csrf_token %}
+	  <div class="form-group">
+	    <input type="text" class="form-control" placeholder="Ник" name="author">
+
+	    <textarea name="text" required="" class="form-control" rows="3" placeholder="Введите ваше сообщение"></textarea>
+	  </div>
+
+	  <button type="submit" class="btn btn-primary">Отправить</button><br><br>
+	</form>
+    <hr>
 
 	{% if massages %}
 
-        <div class="container-fluid">
+        <div class="container-fluid" id="#messages">
             {% for m in massages %}
                 <img id="avatar" src="{% static 'favicon.ico' %}">
                 <h6>{{ m.author }}: <em class="text-secondary">{{ m.date }}</em></h6>
@@ -23,15 +34,25 @@
 		<h3>Сообщения не найдены, станьте первым!</h3><br>
 	{% endif %}
 
-	<form action="{% url 'send_message' chat.id %}" method="POST" enctype="multipart/form-data" style="padding-bottom: 50px;">
-	  {% csrf_token %}
-	  <div class="form-group">
-	    <input type="text" class="form-control" placeholder="Ник" name="author">
 
-	    <textarea name="text" required="" class="form-control" rows="3" placeholder="Введите ваше сообщение"></textarea>
-	  </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+            var div;
+            var ajax = $.ajax;
 
-	  <button type="submit" class="btn btn-primary">Отправить</button><br><br>
-	</form>
+            function mode() {
+                ajax({
+                url: "{% url 'chat' chat.id %}",
+                success: function(data) {
+                        div = document.createElement('div');
+                        div.innerHTML = data;
+                        div = div.getElementsByTagName('div')[10];
+                        document.getElementById('#messages').innerHTML = div.innerHTML;
+                    }
+                });
+            };
+            setInterval(mode, 2000);
+
+    </script>
 
 {% endblock %}

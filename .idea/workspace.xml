@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3b18a5b4-db07-46a5-b4c6-2865c71fa99e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/bus_chan/templates/mainapp/ticket.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/BUS-chan.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/BUS-chan.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bus_chan/apps/forum/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/bus_chan/apps/forum/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bus_chan/apps/forum/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/bus_chan/apps/forum/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bus_chan/apps/forum/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/bus_chan/apps/forum/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bus_chan/apps/forum/migrations/0002_auto_20200525_1539.py" beforeDir="false" afterPath="$PROJECT_DIR$/bus_chan/apps/forum/migrations/0002_auto_20200525_1539.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bus_chan/apps/forum/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/bus_chan/apps/forum/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bus_chan/apps/forum/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/bus_chan/apps/forum/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bus_chan/apps/forum/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/bus_chan/apps/forum/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bus_chan/apps/forum/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/bus_chan/apps/forum/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bus_chan/apps/mainapp/migrations/0006_auto_20200525_1415.py" beforeDir="false" afterPath="$PROJECT_DIR$/bus_chan/apps/mainapp/migrations/0006_auto_20200525_1415.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bus_chan/apps/mainapp/migrations/0007_auto_20200525_1956.py" beforeDir="false" afterPath="$PROJECT_DIR$/bus_chan/apps/mainapp/migrations/0007_auto_20200525_1956.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bus_chan/apps/mainapp/migrations/0008_chat_key.py" beforeDir="false" afterPath="$PROJECT_DIR$/bus_chan/apps/mainapp/migrations/0008_chat_key.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bus_chan/apps/mainapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/bus_chan/apps/mainapp/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bus_chan/apps/mainapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/bus_chan/apps/mainapp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bus_chan/templates/forum/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/bus_chan/templates/forum/detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bus_chan/templates/forum/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/bus_chan/templates/forum/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bus_chan/templates/forum/new_question.html" beforeDir="false" afterPath="$PROJECT_DIR$/bus_chan/templates/forum/new_question.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bus_chan/templates/forum/wrapper.html" beforeDir="false" afterPath="$PROJECT_DIR$/bus_chan/templates/forum/wrapper.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bus_chan/templates/mainapp/chat.html" beforeDir="false" afterPath="$PROJECT_DIR$/bus_chan/templates/mainapp/chat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/questions.csv" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1eDApE2PGRGvQQG069mABHncCK5" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RunManager">
+    <configuration name="BUS-chan" type="Python.DjangoServer" factoryName="Django server">
+      <module name="BUS-chan" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="bus_chan.settings" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3b18a5b4-db07-46a5-b4c6-2865c71fa99e" name="Default Changelist" comment="" />
+      <created>1593845973058</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1593845973058</updated>
+      <workItem from="1593845997310" duration="9621000" />
+      <workItem from="1594794717313" duration="27000" />
+      <workItem from="1594794764486" duration="28000" />
+      <workItem from="1594795625481" duration="245000" />
+      <workItem from="1594796112788" duration="694000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="368" y="28" width="684" height="738" key="#BUS-chan" timestamp="1594795786575">
+      <screen x="65" y="28" width="1301" height="740" />
+    </state>
+    <state x="368" y="28" width="684" height="738" key="#BUS-chan/65.28.1301.740@65.28.1301.740" timestamp="1594795786575" />
+    <state x="310" y="59" width="875" height="675" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594795796696">
+      <screen x="65" y="28" width="1301" height="740" />
+    </state>
+    <state x="310" y="59" width="875" height="675" key="#com.intellij.execution.impl.EditConfigurationsDialog/65.28.1301.740@65.28.1301.740" timestamp="1594795796696" />
+    <state x="532" y="159" width="424" height="482" key="FileChooserDialogImpl" timestamp="1594795736186">
+      <screen x="65" y="28" width="1301" height="740" />
+    </state>
+    <state x="532" y="159" width="424" height="482" key="FileChooserDialogImpl/65.28.1301.740@65.28.1301.740" timestamp="1594795736186" />
+    <state width="1251" height="173" key="GridCell.Tab.0.bottom" timestamp="1594795880626">
+      <screen x="65" y="28" width="1301" height="740" />
+    </state>
+    <state width="1323" height="182" key="GridCell.Tab.0.bottom/0.30.1366.738@0.30.1366.738" timestamp="1593856910430" />
+    <state width="1251" height="173" key="GridCell.Tab.0.bottom/65.28.1301.740@65.28.1301.740" timestamp="1594795880626" />
+    <state width="1251" height="173" key="GridCell.Tab.0.center" timestamp="1594795880626">
+      <screen x="65" y="28" width="1301" height="740" />
+    </state>
+    <state width="1323" height="182" key="GridCell.Tab.0.center/0.30.1366.738@0.30.1366.738" timestamp="1593856910430" />
+    <state width="1251" height="173" key="GridCell.Tab.0.center/65.28.1301.740@65.28.1301.740" timestamp="1594795880626" />
+    <state width="1251" height="173" key="GridCell.Tab.0.left" timestamp="1594795880626">
+      <screen x="65" y="28" width="1301" height="740" />
+    </state>
+    <state width="1323" height="182" key="GridCell.Tab.0.left/0.30.1366.738@0.30.1366.738" timestamp="1593856910430" />
+    <state width="1251" height="173" key="GridCell.Tab.0.left/65.28.1301.740@65.28.1301.740" timestamp="1594795880626" />
+    <state width="1251" height="173" key="GridCell.Tab.0.right" timestamp="1594795880626">
+      <screen x="65" y="28" width="1301" height="740" />
+    </state>
+    <state width="1323" height="182" key="GridCell.Tab.0.right/0.30.1366.738@0.30.1366.738" timestamp="1593856910430" />
+    <state width="1251" height="173" key="GridCell.Tab.0.right/65.28.1301.740@65.28.1301.740" timestamp="1594795880626" />
+    <state x="240" y="38" key="SettingsEditor" timestamp="1594795774167">
+      <screen x="65" y="28" width="1301" height="740" />
+    </state>
+    <state x="184" y="44" key="SettingsEditor/0.30.1366.738@0.30.1366.738" timestamp="1593846333870" />
+    <state x="240" y="38" key="SettingsEditor/65.28.1301.740@65.28.1301.740" timestamp="1594795774166" />
+  </component>
+</project>
