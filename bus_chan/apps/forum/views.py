@@ -11,7 +11,7 @@ QUESTIONS_IN_ONE_PAGE = 20
 
 def index(request):
     questions = Question.objects.order_by('-id')
-    pages = ceil(len(questions) / 20)
+    pages = ceil(len(questions) / QUESTIONS_IN_ONE_PAGE)
     questions = questions[:QUESTIONS_IN_ONE_PAGE]
     return render(request, 'forum/list.html', {'questions_list': questions,
                                                'pages': range(1, pages + 1)})
