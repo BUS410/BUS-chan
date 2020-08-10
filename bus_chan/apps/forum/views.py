@@ -19,7 +19,7 @@ def index(request):
 
 def forum(request, page):
     questions = Question.objects.order_by('-id')
-    pages = ceil(len(questions) / 20)
+    pages = ceil(len(questions) / QUESTIONS_IN_ONE_PAGE)
     questions = questions[(page - 1) * QUESTIONS_IN_ONE_PAGE:
                           page * QUESTIONS_IN_ONE_PAGE]
     for q in questions:
